@@ -11,7 +11,7 @@ g++ main.cpp logic.cpp -o manager.exe
   
 
 Тестирование программы (использован фреймворк gtest в сочетании с инструментарием cmake для сборки проекта):  
-cd computer_club_manager
+cd computer_club_manager  
 mkdir build  (создаём рабочую директорию, чтобы в ней cmake  плодил все дополнительные файлы)  
 cd build     (переходим в рабочую директорию)  
 cmake .. -G "MinGW Makefiles"    (настраиваем cmake под mingw)  
