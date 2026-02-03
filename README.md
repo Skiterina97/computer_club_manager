@@ -1,6 +1,6 @@
 # computer_club_manager
 Сборка и запуск программы без cmake:  
-cd <project>  
+cd computer_club_manager  
 g++ main.cpp logic.cpp -o manager.exe   
 
 Запуск программы с тестовым файлом из условия:
@@ -11,7 +11,7 @@ g++ main.cpp logic.cpp -o manager.exe
   
 
 Тестирование программы (использован фреймворк gtest в сочетании со инструментарием cmake для сборки проекта):  
-cd <project>  
+cd computer_club_manager
 mkdir build  (создаём рабочую директорию, чтобы в ней cmake  плодил все дополнительные файлы)  
 cd build     (переходим в рабочую директорию)  
 cmake .. -G "MinGW Makefiles"    (настраиваем cmake под mingw)  
