@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
   }
 
   if (stoi(tb.substr(0, 2)) > 23 || stoi(tb.substr(3, 2)) > 59 || stoi(te.substr(0, 2)) > 23 || stoi(te.substr(3, 2)) > 59 ||
-      timeBegin > timeEnd) //в рамках одного рабочего дня?
+      timeBegin > timeEnd)
   {
     file.close();
     ofstream newFile("output.txt");
@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     return 0;
   }
 
-  //считываем цену одногои часа и проверяем её корректность
+  //считываем цену одного часа и проверяем её корректность
   string pr;
   getline(file, pr);
   if (!IsPositiveInteger(pr))
@@ -176,11 +176,13 @@ int main(int argc, char* argv[])
   //записываем время открытия
   newFile << tb << endl;
 
+  //флаг для отслеживания конца рабочего дня
   bool flagClose = false;
 
   //идём по событиям
   for (int i = 0; i < events.size(); i++)
   {
+    //если конец рабочего дня уже наступил
     if (!flagClose && events[i].t > timeEnd)
     {
       for (auto el: clients)
@@ -227,6 +229,7 @@ int main(int argc, char* argv[])
   //по окончанию рабочего дня для всех клиентов, оставшихся в клубе делаем проверку на то, сидели ли они за каким-то столом
   //если да, то рассчитываем выручку и время работы этого стола
   //делаем записи событий типа 11
+  //если не сделали этого в процессе обработки событий
   if (!flagClose)
   {
     for (auto el: clients)

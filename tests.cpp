@@ -621,7 +621,7 @@ TEST(ClientWaitTest, SuccessfulWait2)
   size_t k = 0;
 
   clients.insert("client1");
-  clients.insert("client1");
+  clients.insert("client2");
 
   Event event;
   event.time = "12:00";
