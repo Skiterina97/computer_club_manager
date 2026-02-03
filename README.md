@@ -1,8 +1,8 @@
 # computer_club_manager
-Сборка и запуск программы без cmake:
-cd <project>
-g++ main.cpp logic.cpp -o manager.exe 
-./manager.exe test_file.txt
+Сборка и запуск программы без cmake:  
+cd <project>  
+g++ main.cpp logic.cpp -o manager.exe   
+./manager.exe test_file.txt  
 
 
 Тестирование программы (использован фреймворк gtest в сочетании со инструментарием cmake для сборки проекта):
